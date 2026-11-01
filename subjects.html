@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EduFlow — онлайн-дневник для планирования обучения. Учебный HTML/CSS-проект.">
+    <title>
+      Проекты и курсы — EduFlow
+    </title>
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js" defer>
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">
+      Перейти к содержимому
+    </a>
+    <div class="app-layout">
+      <aside class="sidebar">
+        <a class="brand" href="index.html" aria-label="EduFlow — Мой день">
+          <span class="icon" aria-hidden="true">
+            <img src="assets/img/logo.svg" alt="">
+          </span>
+          <span>
+            EduFlow
+          </span>
+        </a>
+        <nav aria-label="Основная навигация">
+          <a href="index.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-sun.svg" alt="">
+            </span>
+            <span>
+              Мой день
+            </span>
+          </a>
+          <a href="tasks.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-check.svg" alt="">
+            </span>
+            <span>
+              Все задачи
+            </span>
+          </a>
+          <a href="subjects.html" class="active" aria-current="page">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-folder-active.svg" alt="">
+            </span>
+            <span>
+              Проекты и курсы
+            </span>
+          </a>
+          <a href="calendar.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-calendar.svg" alt="">
+            </span>
+            <span>
+              Календарь
+            </span>
+          </a>
+          <a href="profile.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-user.svg" alt="">
+            </span>
+            <span>
+              Профиль
+            </span>
+          </a>
+        </nav>
+      </aside>
+      <main class="main-content" id="content">
+        <header class="page-header">
+          <h1>
+            Проекты и курсы
+          </h1>
+          <button class="button" type="button" data-open-dialog="project-dialog">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-plus-white.svg" alt="">
+            </span>
+            Добавить проект
+          </button>
+        </header>
+        <div class="toolbar">
+          <form role="search" action="subjects.html" method="get">
+            <label class="sr-only" for="course-search">
+              Поиск проектов и курсов
+            </label>
+            <div class="search-field">
+              <span class="icon" aria-hidden="true">
+                <img src="assets/img/icon-search.svg" alt="">
+              </span>
+              <input type="search" id="course-search" name="search" placeholder="Поиск проектов...">
+            </div>
+          </form>
+          <div class="filter-group" role="group" aria-label="Состояние проектов">
+            <button class="button" type="button" data-course-status="all" aria-pressed="true">
+              Все
+            </button>
+            <button class="button" type="button" data-course-status="active" aria-pressed="false">
+              Активные
+            </button>
+            <button class="button" type="button" data-course-status="completed" aria-pressed="false">
+              Завершённые
+            </button>
+          </div>
+        </div>
+        <section class="course-grid" aria-label="Проекты и курсы">
+          <article class="course-card " data-status="active">
+            <div class="course-icon">
+              <span class="icon" aria-hidden="true">
+                <img src="assets/img/icon-math.svg" alt="">
+              </span>
+            </div>
+            <div class="course-body">
+              <div class="row-between">
+                <h2>
+                  <a href="subject.html">
+                    Математика
+                  </a>
+                </h2>
+                <button class="icon-button" type="button" data-open-dialog="project-dialog" aria-label="Параметры курса Математика">
+                  <span class="icon" aria-hidden="true">
+                    <img src="assets/img/icon-more-card.svg" alt="">
+                  </span>
+                </button>
+              </div>
+              <p class="course-description">
+                Подготовка к экзамену
+              </p>
+              <div class="progress-caption">
+                <span>
+                  8 из 12 задач выполнено
+                </span>
+                <strong>
+                  67%
+                </strong>
+              </div>
+              <progress value="8" max="12" aria-label="Прогресс: Математика">
+                67%
+              </progress>
+            </div>
+          </article>
+          <article class="course-card rose" data-status="active">
+            <div class="course-icon">
+              <span class="icon" aria-hidden="true">
+                <img src="assets/img/icon-book.svg" alt="">
+              </span>
+            </div>
+            <div class="course-body">
+              <div class="row-between">
+                <h2>
+                  <a href="subject.html">
+                    Английский
+                  </a>
+                </h2>
+                <button class="icon-button" type="button" data-open-dialog="project-dialog" aria-label="Параметры курса Английский">
+                  <span class="icon" aria-hidden="true">
+                    <img src="assets/img/icon-more-card.svg" alt="">
+                  </span>
+                </button>
+              </div>
+              <p class="course-description">
+                Уроки, практика и новые слова
+              </p>
+              <div class="progress-caption">
+                <span>
+                  4 из 10 задач выполнено
+                </span>
+                <strong>
+                  40%
+                </strong>
+              </div>
+              <progress value="4" max="10" aria-label="Прогресс: Английский">
+                40%
+              </progress>
+            </div>
+          </article>
+          <article class="course-card mint" data-status="active">
+            <div class="course-icon">
+              <span class="icon" aria-hidden="true">
+                <img src="assets/img/icon-graduation.svg" alt="">
+              </span>
+            </div>
+            <div class="course-body">
+              <div class="row-between">
+                <h2>
+                  <a href="subject.html">
+                    Диплом
+                  </a>
+                </h2>
+                <button class="icon-button" type="button" data-open-dialog="project-dialog" aria-label="Параметры курса Диплом">
+                  <span class="icon" aria-hidden="true">
+                    <img src="assets/img/icon-more-card.svg" alt="">
+                  </span>
+                </button>
+              </div>
+              <p class="course-description">
+                Выпускная квалификационная работа
+              </p>
+              <div class="progress-caption">
+                <span>
+                  3 из 12 задач выполнено
+                </span>
+                <strong>
+                  25%
+                </strong>
+              </div>
+              <progress value="3" max="12" aria-label="Прогресс: Диплом">
+                25%
+              </progress>
+            </div>
+          </article>
+          <article class="course-card seafoam" data-status="active">
+            <div class="course-icon">
+              <span class="icon" aria-hidden="true">
+                <img src="assets/img/icon-leaf.svg" alt="">
+              </span>
+            </div>
+            <div class="course-body">
+              <div class="row-between">
+                <h2>
+                  <a href="subject.html">
+                    Биология
+                  </a>
+                </h2>
+                <button class="icon-button" type="button" data-open-dialog="project-dialog" aria-label="Параметры курса Биология">
+                  <span class="icon" aria-hidden="true">
+                    <img src="assets/img/icon-more-card.svg" alt="">
+                  </span>
+                </button>
+              </div>
+              <p class="course-description">
+                Лекции и практические занятия
+              </p>
+              <div class="progress-caption">
+                <span>
+                  8 из 10 задач выполнено
+                </span>
+                <strong>
+                  80%
+                </strong>
+              </div>
+              <progress value="8" max="10" aria-label="Прогресс: Биология">
+                80%
+              </progress>
+            </div>
+          </article>
+        </section>
+        <p class="empty-state" id="courses-empty" role="status" hidden>
+          Подходящих проектов и курсов нет.
+        </p>
+      </main>
+    </div>
+    <dialog id="project-dialog" aria-labelledby="project-title">
+      <div class="dialog-heading">
+        <h2 id="project-title">
+          Проект или курс
+        </h2>
+        <button class="icon-button" type="button" data-close-dialog aria-label="Закрыть">
+          ✕
+        </button>
+      </div>
+      <form action="#" method="post" data-demo-form>
+        <div class="field">
+          <label for="project-name">
+            Название
+          </label>
+          <input id="project-name" name="project-name" type="text" required placeholder="Название проекта или курса" maxlength="100">
+        </div>
+        <div class="field">
+          <label for="project-type">
+            Тип
+          </label>
+          <select id="project-type" name="type">
+            <option>
+              Курс
+            </option>
+            <option>
+              Проект
+            </option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="project-description">
+            Описание
+          </label>
+          <textarea id="project-description" name="description" rows="3"></textarea>
+        </div>
+        <button class="button" type="submit">
+          Сохранить
+        </button>
+        <p class="form-status" role="status">
+        </p>
+      </form>
+    </dialog>
+    <div id="toast" class="toast" role="status" hidden>
+    </div>
+  </body>
+</html>

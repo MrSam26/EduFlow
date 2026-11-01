@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EduFlow — онлайн-дневник для планирования обучения. Учебный HTML/CSS-проект.">
+    <title>
+      Вход и регистрация — EduFlow
+    </title>
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js" defer>
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">
+      Перейти к содержимому
+    </a>
+    <div class="auth-layout">
+      <aside class="auth-promo" aria-label="Об EduFlow">
+        <a class="brand" href="index.html" aria-label="EduFlow — Мой день">
+          <span class="icon" aria-hidden="true">
+            <img src="assets/img/logo.svg" alt="">
+          </span>
+          <span>
+            EduFlow
+          </span>
+        </a>
+        <div class="auth-promo-inner">
+          <div>
+            <h2>
+              Планируй.
+              <br>
+              Учись.
+              <br>
+              Достигай большего
+            </h2>
+            <p>
+              Твой личный помощник для учебы, работы и больших целей.
+            </p>
+          </div>
+          <img class="auth-illustration" src="assets/img/study.png" alt="Девушка планирует обучение за ноутбуком" width="338" height="338">
+        </div>
+      </aside>
+      <main class="auth-main" id="content">
+        <div class="tabs " role="tablist" aria-label="Авторизация">
+          <button type="button" class="tab" role="tab" id="tab-sign-in" aria-controls="sign-in" aria-selected="true" tabindex="0">
+            Вход
+          </button>
+          <button type="button" class="tab" role="tab" id="tab-sign-up" aria-controls="sign-up" aria-selected="false" tabindex="-1">
+            Регистрация
+          </button>
+        </div>
+        <section id="sign-in" role="tabpanel" aria-labelledby="tab-sign-in" tabindex="0">
+          <h1>
+            Рады видеть тебя снова!
+          </h1>
+          <p class="intro">
+            Войди в аккаунт, чтобы продолжить
+          </p>
+          <form class="auth-form" id="login-form" action="#" method="post" data-demo-form data-redirect="index.html">
+            <div class="field">
+              <label for="login-email">
+                Email
+              </label>
+              <input id="login-email" name="login-email" type="email" required autocomplete="email" placeholder="user@example.com">
+            </div>
+            <div class="field">
+              <label for="login-password">
+                Пароль
+              </label>
+              <input id="login-password" name="login-password" type="password" required autocomplete="current-password" minlength="6" placeholder="Введите пароль">
+            </div>
+            <div class="auth-options">
+              <label class="check-label">
+                <input type="checkbox" name="remember">
+                <span>
+                  Запомнить меня
+                </span>
+              </label>
+              <button class="text-button" type="button" data-open-dialog="recovery-dialog">
+                Забыли пароль?
+              </button>
+            </div>
+            <button class="button full-width" type="submit">
+              Войти
+            </button>
+          </form>
+          <div class="divider">
+            или
+          </div>
+          <button class="button outline full-width google-button" type="button" data-message="Вход через Google в учебном макете не подключён.">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-google.svg" alt="">
+            </span>
+            Продолжить с Google
+          </button>
+          <a class="demo-link" href="index.html">
+            Посмотреть учебный дневник
+          </a>
+        </section>
+        <section id="sign-up" role="tabpanel" aria-labelledby="tab-sign-up" tabindex="0" hidden>
+          <h2>
+            Создай свой учебный план
+          </h2>
+          <p class="intro">
+            Заполни поля для регистрации
+          </p>
+          <form class="auth-form" action="#" method="post" data-demo-form>
+            <div class="field">
+              <label for="register-name">
+                Имя
+              </label>
+              <input id="register-name" name="register-name" type="text" required autocomplete="given-name" placeholder="Ваше имя" maxlength="60">
+            </div>
+            <div class="field">
+              <label for="register-email">
+                Email
+              </label>
+              <input id="register-email" name="register-email" type="email" required autocomplete="email" placeholder="user@example.com">
+            </div>
+            <div class="field">
+              <label for="register-password">
+                Пароль
+              </label>
+              <input id="register-password" name="register-password" type="password" required autocomplete="new-password" minlength="6" placeholder="Не менее 6 символов">
+            </div>
+            <div class="field">
+              <label for="confirm-password">
+                Повтор пароля
+              </label>
+              <input id="confirm-password" name="confirm-password" type="password" required autocomplete="new-password" minlength="6" placeholder="Повторите пароль">
+            </div>
+            <button class="button full-width" type="submit">
+              Зарегистрироваться
+            </button>
+            <p class="form-status" role="status">
+            </p>
+          </form>
+        </section>
+      </main>
+    </div>
+    <dialog id="recovery-dialog" aria-labelledby="recovery-title">
+      <div class="dialog-heading">
+        <h2 id="recovery-title">
+          Восстановление пароля
+        </h2>
+        <button type="button" class="icon-button" data-close-dialog aria-label="Закрыть">
+          ✕
+        </button>
+      </div>
+      <form action="#" method="post" data-demo-form>
+        <div class="field">
+          <label for="recovery-email">
+            Электронная почта
+          </label>
+          <input id="recovery-email" name="recovery-email" type="email" required autocomplete="email" placeholder="user@example.com">
+        </div>
+        <button class="button" type="submit">
+          Продолжить
+        </button>
+        <p class="form-status" role="status">
+        </p>
+      </form>
+    </dialog>
+    <div id="toast" class="toast" role="status" hidden>
+    </div>
+  </body>
+</html>

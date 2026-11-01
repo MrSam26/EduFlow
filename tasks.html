@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EduFlow — онлайн-дневник для планирования обучения. Учебный HTML/CSS-проект.">
+    <title>
+      Все задачи — EduFlow
+    </title>
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js" defer>
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">
+      Перейти к содержимому
+    </a>
+    <div class="app-layout">
+      <aside class="sidebar">
+        <a class="brand" href="index.html" aria-label="EduFlow — Мой день">
+          <span class="icon" aria-hidden="true">
+            <img src="assets/img/logo.svg" alt="">
+          </span>
+          <span>
+            EduFlow
+          </span>
+        </a>
+        <nav aria-label="Основная навигация">
+          <a href="index.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-sun.svg" alt="">
+            </span>
+            <span>
+              Мой день
+            </span>
+          </a>
+          <a href="tasks.html" class="active" aria-current="page">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-check-active.svg" alt="">
+            </span>
+            <span>
+              Все задачи
+            </span>
+          </a>
+          <a href="subjects.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-folder.svg" alt="">
+            </span>
+            <span>
+              Проекты и курсы
+            </span>
+          </a>
+          <a href="calendar.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-calendar.svg" alt="">
+            </span>
+            <span>
+              Календарь
+            </span>
+          </a>
+          <a href="profile.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-user.svg" alt="">
+            </span>
+            <span>
+              Профиль
+            </span>
+          </a>
+        </nav>
+      </aside>
+      <main class="main-content" id="content">
+        <header class="page-header">
+          <h1>
+            Все задачи
+          </h1>
+          <button class="button" type="button" data-open-dialog="task-dialog">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-plus-white.svg" alt="">
+            </span>
+            Добавить задачу
+          </button>
+        </header>
+        <form id="task-filters" class="task-filters" action="tasks.html" method="get" aria-label="Фильтры задач">
+          <div class="search-field">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-search.svg" alt="">
+            </span>
+            <label class="sr-only" for="task-search">
+              Поиск задач
+            </label>
+            <input type="search" id="task-search" name="search" placeholder="Поиск задач...">
+          </div>
+          <div>
+            <label class="sr-only" for="course-filter">
+              Проект или курс
+            </label>
+            <select id="course-filter" name="course">
+              <option value="all">
+                Все проекты
+              </option>
+              <option value="math">
+                Математика
+              </option>
+              <option value="english">
+                Английский
+              </option>
+              <option value="diploma">
+                Диплом
+              </option>
+              <option value="biology">
+                Биология
+              </option>
+            </select>
+          </div>
+          <div>
+            <label class="sr-only" for="priority-filter">
+              Приоритет
+            </label>
+            <select id="priority-filter" name="priority">
+              <option value="all">
+                Все приоритеты
+              </option>
+              <option value="high">
+                Высокий
+              </option>
+              <option value="normal">
+                Обычный
+              </option>
+              <option value="low">
+                Низкий
+              </option>
+            </select>
+          </div>
+          <div>
+            <label class="sr-only" for="status-filter">
+              Статус задачи
+            </label>
+            <select id="status-filter" name="status">
+              <option value="all">
+                Все статусы
+              </option>
+              <option value="planned">
+                Запланировано
+              </option>
+              <option value="working">
+                В работе
+              </option>
+              <option value="done">
+                Завершено
+              </option>
+            </select>
+          </div>
+        </form>
+        <div class="table-scroll">
+          <table class="tasks-table">
+            <caption class="sr-only">
+              Список учебных задач
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">
+                  <span class="sr-only">
+                    Выполнение
+                  </span>
+                </th>
+                <th scope="col">
+                  Название задачи
+                </th>
+                <th scope="col">
+                  Проект
+                </th>
+                <th scope="col">
+                  Срок выполнения
+                </th>
+                <th scope="col">
+                  Статус
+                </th>
+                <th scope="col">
+                  <span class="sr-only">
+                    Действия
+                  </span>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="task-list">
+              <tr data-course="math" data-status="planned" data-priority="high">
+                <td>
+                  <input id="task-1" type="checkbox" aria-label="Отметить задачу: Изучить производные функций">
+                </td>
+                <td>
+                  <a href="task.html">
+                    Изучить производные функций
+                  </a>
+                </td>
+                <td>
+                  Математика
+                </td>
+                <td>
+                  <time datetime="2026-05-15">
+                    15 мая 2026
+                  </time>
+                </td>
+                <td>
+                  <span class="badge ">
+                    Запланировано
+                  </span>
+                </td>
+                <td>
+                  <button class="icon-button" type="button" data-open-dialog="task-dialog" aria-label="Параметры задачи: Изучить производные функций">
+                    <span class="icon" aria-hidden="true">
+                      <img src="assets/img/icon-more.svg" alt="">
+                    </span>
+                  </button>
+                </td>
+              </tr>
+              <tr data-course="english" data-status="working" data-priority="normal">
+                <td>
+                  <input id="task-2" type="checkbox" aria-label="Отметить задачу: Прочитать главу 5">
+                </td>
+                <td>
+                  <a href="task.html">
+                    Прочитать главу 5
+                  </a>
+                </td>
+                <td>
+                  Английский
+                </td>
+                <td>
+                  <time datetime="2026-05-16">
+                    16 мая 2026
+                  </time>
+                </td>
+                <td>
+                  <span class="badge working">
+                    В работе
+                  </span>
+                </td>
+                <td>
+                  <button class="icon-button" type="button" data-open-dialog="task-dialog" aria-label="Параметры задачи: Прочитать главу 5">
+                    <span class="icon" aria-hidden="true">
+                      <img src="assets/img/icon-more.svg" alt="">
+                    </span>
+                  </button>
+                </td>
+              </tr>
+              <tr data-course="diploma" data-status="planned" data-priority="high">
+                <td>
+                  <input id="task-3" type="checkbox" aria-label="Отметить задачу: Подготовить презентацию">
+                </td>
+                <td>
+                  <a href="task.html">
+                    Подготовить презентацию
+                  </a>
+                </td>
+                <td>
+                  Диплом
+                </td>
+                <td>
+                  <time datetime="2026-05-17">
+                    17 мая 2026
+                  </time>
+                </td>
+                <td>
+                  <span class="badge ">
+                    Запланировано
+                  </span>
+                </td>
+                <td>
+                  <button class="icon-button" type="button" data-open-dialog="task-dialog" aria-label="Параметры задачи: Подготовить презентацию">
+                    <span class="icon" aria-hidden="true">
+                      <img src="assets/img/icon-more.svg" alt="">
+                    </span>
+                  </button>
+                </td>
+              </tr>
+              <tr data-course="math" data-status="planned" data-priority="normal">
+                <td>
+                  <input id="task-4" type="checkbox" aria-label="Отметить задачу: Решить задачи по интегралам">
+                </td>
+                <td>
+                  <a href="task.html">
+                    Решить задачи по интегралам
+                  </a>
+                </td>
+                <td>
+                  Математика
+                </td>
+                <td>
+                  <time datetime="2026-05-18">
+                    18 мая 2026
+                  </time>
+                </td>
+                <td>
+                  <span class="badge ">
+                    Запланировано
+                  </span>
+                </td>
+                <td>
+                  <button class="icon-button" type="button" data-open-dialog="task-dialog" aria-label="Параметры задачи: Решить задачи по интегралам">
+                    <span class="icon" aria-hidden="true">
+                      <img src="assets/img/icon-more.svg" alt="">
+                    </span>
+                  </button>
+                </td>
+              </tr>
+              <tr data-course="english" data-status="done" data-priority="low">
+                <td>
+                  <input id="task-5" type="checkbox" aria-label="Отметить задачу: Повторить новые слова" checked>
+                </td>
+                <td>
+                  <a href="task.html">
+                    Повторить новые слова
+                  </a>
+                </td>
+                <td>
+                  Английский
+                </td>
+                <td>
+                  <time datetime="2026-05-18">
+                    18 мая 2026
+                  </time>
+                </td>
+                <td>
+                  <span class="badge done">
+                    Завершено
+                  </span>
+                </td>
+                <td>
+                  <button class="icon-button" type="button" data-open-dialog="task-dialog" aria-label="Параметры задачи: Повторить новые слова">
+                    <span class="icon" aria-hidden="true">
+                      <img src="assets/img/icon-more.svg" alt="">
+                    </span>
+                  </button>
+                </td>
+              </tr>
+              <tr data-course="biology" data-status="planned" data-priority="normal">
+                <td>
+                  <input id="task-6" type="checkbox" aria-label="Отметить задачу: Изучить строение клетки">
+                </td>
+                <td>
+                  <a href="task.html">
+                    Изучить строение клетки
+                  </a>
+                </td>
+                <td>
+                  Биология
+                </td>
+                <td>
+                  <time datetime="2026-05-19">
+                    19 мая 2026
+                  </time>
+                </td>
+                <td>
+                  <span class="badge ">
+                    Запланировано
+                  </span>
+                </td>
+                <td>
+                  <button class="icon-button" type="button" data-open-dialog="task-dialog" aria-label="Параметры задачи: Изучить строение клетки">
+                    <span class="icon" aria-hidden="true">
+                      <img src="assets/img/icon-more.svg" alt="">
+                    </span>
+                  </button>
+                </td>
+              </tr>
+              <tr data-course="diploma" data-status="done" data-priority="normal">
+                <td>
+                  <input id="task-7" type="checkbox" aria-label="Отметить задачу: Написать введение" checked>
+                </td>
+                <td>
+                  <a href="task.html">
+                    Написать введение
+                  </a>
+                </td>
+                <td>
+                  Диплом
+                </td>
+                <td>
+                  <time datetime="2026-05-20">
+                    20 мая 2026
+                  </time>
+                </td>
+                <td>
+                  <span class="badge done">
+                    Завершено
+                  </span>
+                </td>
+                <td>
+                  <button class="icon-button" type="button" data-open-dialog="task-dialog" aria-label="Параметры задачи: Написать введение">
+                    <span class="icon" aria-hidden="true">
+                      <img src="assets/img/icon-more.svg" alt="">
+                    </span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p id="tasks-empty" class="empty-state" role="status" hidden>
+          По выбранным условиям задач нет.
+        </p>
+        <footer class="table-footer">
+          <p id="task-count" aria-live="polite">
+            Показано 7 из 7 задач
+          </p>
+          <span>
+            Учебный план
+          </span>
+        </footer>
+      </main>
+    </div>
+    <dialog id="task-dialog" aria-labelledby="task-dialog-title">
+      <div class="dialog-heading">
+        <h2 id="task-dialog-title">
+          Учебная задача
+        </h2>
+        <button class="icon-button" type="button" data-close-dialog aria-label="Закрыть форму">
+          ✕
+        </button>
+      </div>
+      <form action="#" method="post" data-demo-form>
+        <div class="field">
+          <label for="task-name">
+            Название задачи
+          </label>
+          <input id="task-name" name="task-name" type="text" required maxlength="120" placeholder="Например, подготовить презентацию">
+        </div>
+        <div class="field">
+          <label for="task-description">
+            Описание
+          </label>
+          <textarea id="task-description" name="description" rows="3" placeholder="Что нужно сделать?"></textarea>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="task-course">
+              Проект или курс
+            </label>
+            <select id="task-course" name="course">
+              <option>
+                Математика
+              </option>
+              <option>
+                Английский
+              </option>
+              <option>
+                Диплом
+              </option>
+              <option>
+                Биология
+              </option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="task-date">
+              Срок выполнения
+            </label>
+            <input id="task-date" name="task-date" type="date" required >
+          </div>
+          <div class="field">
+            <label for="task-priority">
+              Приоритет
+            </label>
+            <select id="task-priority" name="priority">
+              <option>
+                Обычный
+              </option>
+              <option>
+                Высокий
+              </option>
+              <option>
+                Низкий
+              </option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="task-status">
+              Статус
+            </label>
+            <select id="task-status" name="status">
+              <option>
+                Запланировано
+              </option>
+              <option>
+                В работе
+              </option>
+              <option>
+                Завершено
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="button" type="submit">
+            Сохранить
+          </button>
+          <button class="button secondary" type="button" data-close-dialog>
+            Отмена
+          </button>
+        </div>
+        <p class="form-status" role="status">
+        </p>
+      </form>
+    </dialog>
+    <div id="toast" class="toast" role="status" hidden>
+    </div>
+  </body>
+</html>

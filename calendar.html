@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EduFlow — онлайн-дневник для планирования обучения. Учебный HTML/CSS-проект.">
+    <title>
+      Календарь — EduFlow
+    </title>
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js" defer>
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">
+      Перейти к содержимому
+    </a>
+    <div class="app-layout">
+      <aside class="sidebar">
+        <a class="brand" href="index.html" aria-label="EduFlow — Мой день">
+          <span class="icon" aria-hidden="true">
+            <img src="assets/img/logo.svg" alt="">
+          </span>
+          <span>
+            EduFlow
+          </span>
+        </a>
+        <nav aria-label="Основная навигация">
+          <a href="index.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-sun.svg" alt="">
+            </span>
+            <span>
+              Мой день
+            </span>
+          </a>
+          <a href="tasks.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-check.svg" alt="">
+            </span>
+            <span>
+              Все задачи
+            </span>
+          </a>
+          <a href="subjects.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-folder.svg" alt="">
+            </span>
+            <span>
+              Проекты и курсы
+            </span>
+          </a>
+          <a href="calendar.html" class="active" aria-current="page">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-calendar-active.svg" alt="">
+            </span>
+            <span>
+              Календарь
+            </span>
+          </a>
+          <a href="profile.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-user.svg" alt="">
+            </span>
+            <span>
+              Профиль
+            </span>
+          </a>
+        </nav>
+      </aside>
+      <main class="main-content" id="content">
+        <header class="page-header">
+          <h1>
+            Календарь
+          </h1>
+          <div class="tabs calendar-switch" role="tablist" aria-label="Вид календаря">
+            <button type="button" class="tab" role="tab" id="tab-week-view" aria-controls="week-view" aria-selected="true" tabindex="0">
+              Неделя
+            </button>
+            <button type="button" class="tab" role="tab" id="tab-month-view" aria-controls="month-view" aria-selected="false" tabindex="-1">
+              Месяц
+            </button>
+            <button type="button" class="tab" role="tab" id="tab-list-view" aria-controls="list-view" aria-selected="false" tabindex="-1">
+              Список
+            </button>
+          </div>
+        </header>
+        <div class="calendar-period">
+          <h2>
+            Май 2026
+          </h2>
+          <button class="icon-button" type="button" data-message="В учебном макете показан один пример месяца." aria-label="Предыдущий месяц">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-prev-month.svg" alt="">
+            </span>
+          </button>
+          <button class="icon-button" type="button" data-message="В учебном макете показан один пример месяца." aria-label="Следующий месяц">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-next-month.svg" alt="">
+            </span>
+          </button>
+          <button class="text-button" type="button" data-message="Открыт пример учебной недели из макета.">
+            Сегодня
+          </button>
+        </div>
+        <section id="week-view" role="tabpanel" aria-labelledby="tab-week-view" tabindex="0">
+          <div class="table-scroll">
+            <div class="week-calendar" aria-label="Расписание на неделю">
+              <div class="hours" aria-hidden="true">
+                <span>
+                  08:00
+                </span>
+                <span>
+                  09:00
+                </span>
+                <span>
+                  10:00
+                </span>
+                <span>
+                  11:00
+                </span>
+                <span>
+                  12:00
+                </span>
+                <span>
+                  13:00
+                </span>
+                <span>
+                  14:00
+                </span>
+                <span>
+                  15:00
+                </span>
+                <span>
+                  16:00
+                </span>
+              </div>
+              <section class="calendar-day" aria-label="Пн, 12">
+                <h3>
+                  Пн, 12
+                </h3>
+                <div class="day-events">
+                  <a class="event  at-nine" href="subject.html">
+                    <span>
+                      Математика
+                    </span>
+                    <time>
+                      09:00 – 10:30
+                    </time>
+                  </a>
+                </div>
+              </section>
+              <section class="calendar-day" aria-label="Вт, 13">
+                <h3>
+                  Вт, 13
+                </h3>
+                <div class="day-events">
+                  <a class="event green at-ten" href="subject.html">
+                    <span>
+                      Английский
+                    </span>
+                    <time>
+                      10:00 – 11:30
+                    </time>
+                  </a>
+                  <a class="event purple at-fourteen" href="subject.html">
+                    <span>
+                      Работа над проектом
+                    </span>
+                    <time>
+                      14:00 – 15:30
+                    </time>
+                  </a>
+                </div>
+              </section>
+              <section class="calendar-day" aria-label="Ср, 14">
+                <h3>
+                  Ср, 14
+                </h3>
+                <div class="day-events">
+                  <a class="event  at-nine" href="subject.html">
+                    <span>
+                      Биология
+                    </span>
+                    <time>
+                      09:00 – 10:30
+                    </time>
+                  </a>
+                </div>
+              </section>
+              <section class="calendar-day is-today" aria-label="Чт, 15">
+                <h3>
+                  Чт, 15
+                </h3>
+                <div class="day-events">
+                  <a class="event orange at-eight" href="subject.html">
+                    <span>
+                      Математика
+                    </span>
+                    <time>
+                      08:00 – 10:00
+                    </time>
+                  </a>
+                </div>
+              </section>
+              <section class="calendar-day" aria-label="Пт, 16">
+                <h3>
+                  Пт, 16
+                </h3>
+                <div class="day-events">
+                  <a class="event pink at-eleven" href="subject.html">
+                    <span>
+                      Подготовка к экзамену
+                    </span>
+                    <time>
+                      11:00 – 12:30
+                    </time>
+                  </a>
+                </div>
+              </section>
+              <section class="calendar-day" aria-label="Сб, 17">
+                <h3>
+                  Сб, 17
+                </h3>
+                <div class="day-events">
+                  <a class="event green at-thirteen" href="subject.html">
+                    <span>
+                      Повторение материала
+                    </span>
+                    <time>
+                      13:00 – 14:30
+                    </time>
+                  </a>
+                </div>
+              </section>
+              <section class="calendar-day" aria-label="Вс, 18">
+                <h3>
+                  Вс, 18
+                </h3>
+                <div class="day-events">
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+        <section id="month-view" role="tabpanel" aria-labelledby="tab-month-view" tabindex="0" hidden>
+          <div class="month-view">
+            <table class="mini-calendar">
+              <caption>
+                Май 2026
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    ПН
+                  </th>
+                  <th scope="col">
+                    ВТ
+                  </th>
+                  <th scope="col">
+                    СР
+                  </th>
+                  <th scope="col">
+                    ЧТ
+                  </th>
+                  <th scope="col">
+                    ПТ
+                  </th>
+                  <th scope="col">
+                    СБ
+                  </th>
+                  <th scope="col">
+                    ВС
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="calendar.html">
+                      1
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      2
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      3
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      4
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      5
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      6
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      7
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="calendar.html">
+                      8
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      9
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      10
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      11
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      12
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      13
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      14
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="calendar.html" class="selected" aria-current="date">
+                      15
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      16
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      17
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      18
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      19
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      20
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      21
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="calendar.html">
+                      22
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      23
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      24
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      25
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      26
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      27
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      28
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="list-view" role="tabpanel" aria-labelledby="tab-list-view" tabindex="0" hidden>
+          <h2 class="sr-only">
+            События недели
+          </h2>
+          <ul class="event-list">
+            <li>
+              <a href="subject.html">
+                Математика
+              </a>
+              <span class="muted">
+                Пн, 09:00 – 10:30
+              </span>
+            </li>
+            <li>
+              <a href="subject.html">
+                Английский
+              </a>
+              <span class="muted">
+                Вт, 10:00 – 11:30
+              </span>
+            </li>
+            <li>
+              <a href="subject.html">
+                Работа над проектом
+              </a>
+              <span class="muted">
+                Вт, 14:00 – 15:30
+              </span>
+            </li>
+            <li>
+              <a href="subject.html">
+                Биология
+              </a>
+              <span class="muted">
+                Ср, 09:00 – 10:30
+              </span>
+            </li>
+            <li>
+              <a href="subject.html">
+                Математика
+              </a>
+              <span class="muted">
+                Чт, 08:00 – 10:00
+              </span>
+            </li>
+            <li>
+              <a href="subject.html">
+                Подготовка к экзамену
+              </a>
+              <span class="muted">
+                Пт, 11:00 – 12:30
+              </span>
+            </li>
+            <li>
+              <a href="subject.html">
+                Повторение материала
+              </a>
+              <span class="muted">
+                Сб, 13:00 – 14:30
+              </span>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+    <div id="toast" class="toast" role="status" hidden>
+    </div>
+  </body>
+</html>

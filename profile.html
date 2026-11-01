@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EduFlow — онлайн-дневник для планирования обучения. Учебный HTML/CSS-проект.">
+    <title>
+      Профиль и настройки — EduFlow
+    </title>
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js" defer>
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">
+      Перейти к содержимому
+    </a>
+    <div class="app-layout">
+      <aside class="sidebar">
+        <a class="brand" href="index.html" aria-label="EduFlow — Мой день">
+          <span class="icon" aria-hidden="true">
+            <img src="assets/img/logo.svg" alt="">
+          </span>
+          <span>
+            EduFlow
+          </span>
+        </a>
+        <nav aria-label="Основная навигация">
+          <a href="index.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-sun.svg" alt="">
+            </span>
+            <span>
+              Мой день
+            </span>
+          </a>
+          <a href="tasks.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-check.svg" alt="">
+            </span>
+            <span>
+              Все задачи
+            </span>
+          </a>
+          <a href="subjects.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-folder.svg" alt="">
+            </span>
+            <span>
+              Проекты и курсы
+            </span>
+          </a>
+          <a href="calendar.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-calendar.svg" alt="">
+            </span>
+            <span>
+              Календарь
+            </span>
+          </a>
+          <a href="profile.html" class="active" aria-current="page">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-user-active.svg" alt="">
+            </span>
+            <span>
+              Профиль
+            </span>
+          </a>
+        </nav>
+      </aside>
+      <main class="main-content" id="content">
+        <header class="page-header">
+          <h1>
+            Профиль и настройки
+          </h1>
+        </header>
+        <div class="tabs " role="tablist" aria-label="Настройки профиля">
+          <button type="button" class="tab" role="tab" id="tab-personal" aria-controls="personal" aria-selected="true" tabindex="0">
+            Личные данные
+          </button>
+          <button type="button" class="tab" role="tab" id="tab-notifications" aria-controls="notifications" aria-selected="false" tabindex="-1">
+            Уведомления
+          </button>
+          <button type="button" class="tab" role="tab" id="tab-security" aria-controls="security" aria-selected="false" tabindex="-1">
+            Безопасность
+          </button>
+          <button type="button" class="tab" role="tab" id="tab-connections" aria-controls="connections" aria-selected="false" tabindex="-1">
+            Подключения
+          </button>
+        </div>
+        <section id="personal" role="tabpanel" aria-labelledby="tab-personal" tabindex="0">
+          <form id="profile-form" class="profile-layout" action="#" method="post" enctype="multipart/form-data" data-demo-form>
+            <div class="avatar-block">
+              <span class="icon" aria-hidden="true">
+                <img src="assets/img/avatar.svg" alt="">
+              </span>
+              <label class="button secondary" for="profile-photo">
+                Изменить фото
+              </label>
+              <input class="sr-only" id="profile-photo" type="file" name="photo" accept="image/jpeg,image/png">
+              <p class="form-help">
+                JPG, PNG. Не более 5 МБ
+              </p>
+            </div>
+            <div class="profile-form">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="first-name">
+                    Имя
+                  </label>
+                  <input id="first-name" name="first-name" type="text" value="Пользователь" required autocomplete="given-name" maxlength="60">
+                </div>
+                <div class="field">
+                  <label for="last-name">
+                    Фамилия
+                  </label>
+                  <input id="last-name" name="last-name" type="text" autocomplete="family-name" placeholder="Введите фамилию" maxlength="60">
+                </div>
+                <div class="field">
+                  <label for="profile-email">
+                    Email
+                  </label>
+                  <input id="profile-email" name="profile-email" type="email" value="user@example.com" required autocomplete="email">
+                </div>
+                <div class="field">
+                  <label for="profile-phone">
+                    Телефон
+                  </label>
+                  <input id="profile-phone" name="profile-phone" type="tel" autocomplete="tel" placeholder="Введите номер телефона">
+                </div>
+                <div class="field span-two">
+                  <label for="profile-about">
+                    О себе
+                  </label>
+                  <textarea id="profile-about" name="about" rows="3">Учусь, развиваюсь и каждый день делаю шаг к своим целям.</textarea>
+                </div>
+                <div class="field">
+                  <label for="timezone">
+                    Часовой пояс
+                  </label>
+                  <select id="timezone" name="timezone">
+                    <option value="UTC+03:00">
+                      (UTC+03:00) Москва
+                    </option>
+                    <option value="UTC+02:00">
+                      (UTC+02:00) Калининград
+                    </option>
+                    <option value="UTC+05:00">
+                      (UTC+05:00) Екатеринбург
+                    </option>
+                  </select>
+                </div>
+                <fieldset class="switches">
+                  <legend class="sr-only">
+                    Уведомления
+                  </legend>
+                  <label class="switch-label">
+                    Напоминания о задачах
+                    <input type="checkbox" name="task-reminders" checked>
+                  </label>
+                  <label class="switch-label">
+                    Email-уведомления
+                    <input type="checkbox" name="email-notifications">
+                  </label>
+                </fieldset>
+              </div>
+              <div class="actions">
+                <button class="button" type="submit">
+                  Сохранить изменения
+                </button>
+                <button class="button secondary" type="reset">
+                  Отмена
+                </button>
+              </div>
+              <p class="form-status" role="status">
+              </p>
+            </div>
+          </form>
+        </section>
+        <section id="notifications" role="tabpanel" aria-labelledby="tab-notifications" tabindex="0" hidden>
+          <form class="stack settings-panel" action="#" method="post" data-demo-form>
+            <h2>
+              Уведомления
+            </h2>
+            <label class="check-label">
+              <input type="checkbox" name="deadline" checked>
+              <span>
+                Напоминать о сроках выполнения
+              </span>
+            </label>
+            <label class="check-label">
+              <input type="checkbox" name="weekly">
+              <span>
+                Получать сводку за неделю
+              </span>
+            </label>
+            <div>
+              <button class="button" type="submit">
+                Сохранить
+              </button>
+            </div>
+            <p class="form-status" role="status">
+            </p>
+          </form>
+        </section>
+        <section id="security" role="tabpanel" aria-labelledby="tab-security" tabindex="0" hidden>
+          <form class="stack settings-panel" action="#" method="post" data-demo-form>
+            <h2>
+              Смена пароля
+            </h2>
+            <div class="field">
+              <label for="old-password">
+                Текущий пароль
+              </label>
+              <input id="old-password" name="old-password" type="password" required autocomplete=current-password minlength=6>
+            </div>
+            <div class="field">
+              <label for="new-password">
+                Новый пароль
+              </label>
+              <input id="new-password" name="new-password" type="password" required autocomplete=new-password minlength=6>
+            </div>
+            <div>
+              <button class="button" type="submit">
+                Изменить пароль
+              </button>
+            </div>
+            <p class="form-status" role="status">
+            </p>
+            <a href="login.html">
+              Выйти из аккаунта
+            </a>
+          </form>
+        </section>
+        <section id="connections" role="tabpanel" aria-labelledby="tab-connections" tabindex="0" hidden>
+          <div class="stack settings-panel">
+            <h2>
+              Подключения
+            </h2>
+            <p class="muted">
+              Связь с другими сервисами для учебного плана.
+            </p>
+            <div>
+              <button class="button outline" type="button" data-message="Подключение внешних сервисов в учебном макете не реализовано.">
+                Подключить Google
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div id="toast" class="toast" role="status" hidden>
+    </div>
+  </body>
+</html>

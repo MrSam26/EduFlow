@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EduFlow — онлайн-дневник для планирования обучения. Учебный HTML/CSS-проект.">
+    <title>
+      Мой день — EduFlow
+    </title>
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js" defer>
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">
+      Перейти к содержимому
+    </a>
+    <div class="app-layout">
+      <aside class="sidebar">
+        <a class="brand" href="index.html" aria-label="EduFlow — Мой день">
+          <span class="icon" aria-hidden="true">
+            <img src="assets/img/logo.svg" alt="">
+          </span>
+          <span>
+            EduFlow
+          </span>
+        </a>
+        <nav aria-label="Основная навигация">
+          <a href="index.html" class="active" aria-current="page">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-sun-active.svg" alt="">
+            </span>
+            <span>
+              Мой день
+            </span>
+          </a>
+          <a href="tasks.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-check.svg" alt="">
+            </span>
+            <span>
+              Все задачи
+            </span>
+          </a>
+          <a href="subjects.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-folder.svg" alt="">
+            </span>
+            <span>
+              Проекты и курсы
+            </span>
+          </a>
+          <a href="calendar.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-calendar.svg" alt="">
+            </span>
+            <span>
+              Календарь
+            </span>
+          </a>
+          <a href="profile.html">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-user.svg" alt="">
+            </span>
+            <span>
+              Профиль
+            </span>
+          </a>
+        </nav>
+      </aside>
+      <main class="main-content" id="content">
+        <header class="page-header">
+          <h1>
+            Мой день
+          </h1>
+          <p class="page-date">
+            Четверг, 15 мая 2026 ☀
+          </p>
+        </header>
+        <section class="summary-grid" aria-label="Показатели обучения">
+          <article class="summary-card">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-calendar-check.svg" alt="">
+            </span>
+            <div>
+              <strong>
+                3
+              </strong>
+              <p>
+                Задачи на сегодня
+              </p>
+            </div>
+          </article>
+          <article class="summary-card">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-summary-check.svg" alt="">
+            </span>
+            <div>
+              <strong>
+                5
+              </strong>
+              <p>
+                Завершено за неделю
+              </p>
+            </div>
+          </article>
+          <article class="summary-card">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-focus.svg" alt="">
+            </span>
+            <div>
+              <strong>
+                4ч
+              </strong>
+              <p>
+                Время фокуса
+              </p>
+            </div>
+          </article>
+          <article class="summary-card">
+            <span class="icon" aria-hidden="true">
+              <img src="assets/img/icon-trend.svg" alt="">
+            </span>
+            <div>
+              <strong>
+                78%
+              </strong>
+              <p>
+                Продуктивность
+              </p>
+            </div>
+          </article>
+        </section>
+        <div class="dashboard-grid">
+          <section aria-labelledby="today-title">
+            <div class="section-heading">
+              <h2 id="today-title">
+                Задачи на сегодня
+              </h2>
+              <a href="tasks.html">
+                Все задачи →
+              </a>
+            </div>
+            <div class="task-row">
+              <input type="checkbox" aria-label="Отметить задачу: Подготовить презентацию">
+              <a class="task-title" href="task.html">
+                Подготовить презентацию
+              </a>
+              <span class="task-course">
+                Маркетинг
+              </span>
+              <time datetime="2026-05-15T12:00">
+                Сегодня, 12:00
+              </time>
+              <span class="badge ">
+                Запланировано
+              </span>
+              <button class="icon-button" type="button" data-open-dialog="task-dialog" aria-label="Открыть параметры задачи">
+                <span class="icon" aria-hidden="true">
+                  <img src="assets/img/icon-more.svg" alt="">
+                </span>
+              </button>
+            </div>
+            <div class="task-row">
+              <input type="checkbox" aria-label="Отметить задачу: Прочитать главу книги">
+              <a class="task-title" href="task.html">
+                Прочитать главу книги
+              </a>
+              <span class="task-course">
+                Саморазвитие
+              </span>
+              <time datetime="2026-05-15T15:00">
+                Сегодня, 15:00
+              </time>
+              <span class="badge working">
+                В работе
+              </span>
+              <button class="icon-button" type="button" data-open-dialog="task-dialog" aria-label="Открыть параметры задачи">
+                <span class="icon" aria-hidden="true">
+                  <img src="assets/img/icon-more.svg" alt="">
+                </span>
+              </button>
+            </div>
+            <div class="task-row">
+              <input type="checkbox" aria-label="Отметить задачу: Сделать домашнее задание">
+              <a class="task-title" href="task.html">
+                Сделать домашнее задание
+              </a>
+              <span class="task-course">
+                Английский
+              </span>
+              <time datetime="2026-05-15T18:00">
+                Сегодня, 18:00
+              </time>
+              <span class="badge done">
+                Запланировано
+              </span>
+              <button class="icon-button" type="button" data-open-dialog="task-dialog" aria-label="Открыть параметры задачи">
+                <span class="icon" aria-hidden="true">
+                  <img src="assets/img/icon-more.svg" alt="">
+                </span>
+              </button>
+            </div>
+            <button class="text-button add-task-link" type="button" data-open-dialog="task-dialog">
+              <span class="icon" aria-hidden="true">
+                <img src="assets/img/icon-plus-blue.svg" alt="">
+              </span>
+              Добавить задачу
+            </button>
+          </section>
+          <aside aria-label="Календарь и прогресс">
+            <table class="mini-calendar">
+              <caption>
+                Май 2026
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    ПН
+                  </th>
+                  <th scope="col">
+                    ВТ
+                  </th>
+                  <th scope="col">
+                    СР
+                  </th>
+                  <th scope="col">
+                    ЧТ
+                  </th>
+                  <th scope="col">
+                    ПТ
+                  </th>
+                  <th scope="col">
+                    СБ
+                  </th>
+                  <th scope="col">
+                    ВС
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="calendar.html">
+                      1
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      2
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      3
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      4
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      5
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      6
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      7
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="calendar.html">
+                      8
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      9
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      10
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      11
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      12
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      13
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      14
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="calendar.html" class="selected" aria-current="date">
+                      15
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      16
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      17
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      18
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      19
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      20
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      21
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="calendar.html">
+                      22
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      23
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      24
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      25
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      26
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      27
+                    </a>
+                  </td>
+                  <td>
+                    <a href="calendar.html">
+                      28
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="motivation">
+              <span class="icon" aria-hidden="true">
+                <img src="assets/img/icon-sparkles.svg" alt="">
+              </span>
+              <div>
+                <strong>
+                  Отличный темп!
+                </strong>
+                <p>
+                  Каждый шаг приближает к цели
+                </p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <dialog id="task-dialog" aria-labelledby="task-dialog-title">
+      <div class="dialog-heading">
+        <h2 id="task-dialog-title">
+          Учебная задача
+        </h2>
+        <button class="icon-button" type="button" data-close-dialog aria-label="Закрыть форму">
+          ✕
+        </button>
+      </div>
+      <form action="#" method="post" data-demo-form>
+        <div class="field">
+          <label for="task-name">
+            Название задачи
+          </label>
+          <input id="task-name" name="task-name" type="text" required maxlength="120" placeholder="Например, подготовить презентацию">
+        </div>
+        <div class="field">
+          <label for="task-description">
+            Описание
+          </label>
+          <textarea id="task-description" name="description" rows="3" placeholder="Что нужно сделать?"></textarea>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="task-course">
+              Проект или курс
+            </label>
+            <select id="task-course" name="course">
+              <option>
+                Математика
+              </option>
+              <option>
+                Английский
+              </option>
+              <option>
+                Диплом
+              </option>
+              <option>
+                Биология
+              </option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="task-date">
+              Срок выполнения
+            </label>
+            <input id="task-date" name="task-date" type="date" required >
+          </div>
+          <div class="field">
+            <label for="task-priority">
+              Приоритет
+            </label>
+            <select id="task-priority" name="priority">
+              <option>
+                Обычный
+              </option>
+              <option>
+                Высокий
+              </option>
+              <option>
+                Низкий
+              </option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="task-status">
+              Статус
+            </label>
+            <select id="task-status" name="status">
+              <option>
+                Запланировано
+              </option>
+              <option>
+                В работе
+              </option>
+              <option>
+                Завершено
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="button" type="submit">
+            Сохранить
+          </button>
+          <button class="button secondary" type="button" data-close-dialog>
+            Отмена
+          </button>
+        </div>
+        <p class="form-status" role="status">
+        </p>
+      </form>
+    </dialog>
+    <div id="toast" class="toast" role="status" hidden>
+    </div>
+  </body>
+</html>
